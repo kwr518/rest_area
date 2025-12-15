@@ -1,7 +1,7 @@
 import sqlite3
 import requests
 from flask import Flask, render_template, request, jsonify
-
+### 깃헙수정본
 app = Flask(__name__)
 
 # -----------------------------------
