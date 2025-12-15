@@ -1,0 +1,13 @@
+[1mdiff --git a/app.py b/app.py[m
+[1mindex 0ee7ccd..2283fec 100644[m
+[1m--- a/app.py[m
+[1m+++ b/app.py[m
+[36m@@ -3,7 +3,7 @@[m [mimport requests[m
+ from flask import Flask, render_template, request, jsonify[m
+ ### 깃헙수정본[m
+ app = Flask(__name__)[m
+[31m-[m
+[32m+[m[32m##1231231[m
+ # -----------------------------------[m
+ # 🔑 카카오 REST API 키[m
+ # -----------------------------------[m
