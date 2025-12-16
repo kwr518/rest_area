@@ -1,39 +1,108 @@
 <!DOCTYPE html>
-<html>
+<html lang="ko">
 <head>
-    <meta charset="UTF-8">
-    <title>휴게소 길찾기</title>
+  <meta charset="UTF-8" />
+  <title>Highway Gourmet Road</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <link rel="stylesheet" href="/static/style.css">
+  <link rel="stylesheet" href="/static/style.css" />
 
-    <!-- 네가 준 JS 키 삽입됨 -->
-    <script src="https://dapi.kakao.com/v2/maps/sdk.js?appkey=e6030b46cacbdc94cd3199395a3014da&libraries=services"></script>
+  <!-- 카카오 지도 SDK (JS 키 필요) -->
+  <script src="https://dapi.kakao.com/v2/maps/sdk.js?appkey=e6030b46cacbdc94cd3199395a3014da&libraries=services"></script>
 </head>
 
 <body>
+  <!-- 상단 플로팅 카드 -->
+  <div id="nav-box">
+    <div class="nav-title">Highway Gourmet Road</div>
 
-<div id="nav-box">
-    <input id="start" placeholder="출발지 입력">
-    <input id="end" placeholder="도착지 입력">
-    
-    <div id="btn-row">
-        <button onclick="clearInputs()" class="btn gray">다시입력</button>
-        <button class="btn gray">+ 경유지</button>
-        <button onclick="requestRoute()" class="btn blue">길찾기 ▶</button>
+    <div class="field">
+      <label>출발지 (START)</label>
+      <input id="start" placeholder="출발지 입력" autocomplete="off" />
     </div>
-</div>
 
-<div id="autocomplete"></div>
+    <div class="field">
+      <label>목적지 (END)</label>
+      <input id="end" placeholder="도착지 입력" autocomplete="off" />
+    </div>
 
-<div id="container">
+    <div id="btn-row">
+      <button onclick="clearInputs()" class="btn gray">다시입력</button>
+      <button onclick="requestRoute()" class="btn blue">길찾기 ▶</button>
+    </div>
+    <!-- 필터바 추가 예정 -->
+    <!-- ✅ 필터 바 -->
+    <!-- <div id="filter-bar">
+      <button id="filter-best" class="chip">⭐ 맛집 4.0+</button>
+      <button id="filter-ev" class="chip">⚡ 전기차 충전</button>
+      <button id="filter-gas" class="chip">⛽ 주유소</button>
+    </div> -->
+
+    <div id="route-meta" class="route-meta hidden">
+      <div>
+        <div class="meta-label">예상 거리</div>
+        <div id="meta-distance" class="meta-value">-</div>
+      </div>
+      <div class="meta-divider"></div>
+      <div style="text-align:right">
+        <div class="meta-label">예상 소요 시간</div>
+        <div id="meta-time" class="meta-value">-</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 자동완성 -->
+  <div id="autocomplete"></div>
+
+  <div id="container">
     <div id="map"></div>
 
     <div id="sidebar">
-        <h2>휴게소 목록</h2>
-        <div id="rest-list"></div>
+      <div class="sidebar-title">휴게소 목록 (경로 주변)</div>
+      <div class="hint">휴게소 카드를 클릭하면 지도 중심이 이동합니다.</div>
+      <div id="rest-list" class="timeline"></div>
     </div>
+  </div>
+
+  
+  <script src="/static/main.js"></script>
+  <!-- 휴게소 상세 모달 -->
+<div id="rest-modal" class="modal hidden">
+  <div class="modal-backdrop" onclick="closeRestModal()"></div>
+
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeRestModal()">✕</button>
+
+    <div class="modal-header">
+      <div class="modal-highway" id="modal-highway"></div>
+      <div class="modal-title" id="modal-name"></div>
+      <div class="modal-rating">⭐ <span id="modal-rating"></span></div>
+    </div>
+
+    <div class="modal-section">
+      <h3>대표 메뉴</h3>
+      <div class="menu-card">
+        <div class="menu-name" id="modal-menu-name"></div>
+        <div class="menu-price" id="modal-menu-price"></div>
+        <div class="menu-desc" id="modal-menu-desc"></div>
+      </div>
+    </div>
+<!---->
+    <div class="modal-section">
+      <h3>편의 시설</h3>
+      <div class="facility-grid">
+        <div id="fac-gas" class="facility">⛽ 주유소</div>
+        <div id="fac-ev" class="facility">⚡ 전기차 충전</div>
+        <div id="fac-pharmacy" class="facility">💊 약국</div>
+        <div id="fac-baby" class="facility">👶 수유실</div>
+      </div>
+    </div>
+
+    <button id="modal-naver" class="naver-btn">
+      네이버 지도로 상세 보기
+    </button>
+  </div>
 </div>
 
-<script src="/static/main.js"></script>
 </body>
 </html>
