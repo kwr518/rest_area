@@ -336,10 +336,10 @@ function openRestModal(rest) {
       }
   };
 
-  setFac("fac-gas", rest.has_gas);
-  setFac("fac-ev", rest.has_ev);
-  setFac("fac-pharmacy", rest.has_pharmacy);
-  setFac("fac-baby", rest.has_baby);
+ setFac("fac-gas", rest.has_gas);
+ setFac("fac-ev", rest.has_ev);
+ setFac("fac-pharmacy", rest.has_pharmacy);
+ setFac("fac-baby", rest.has_baby);
 
   document.getElementById("modal-naver").onclick = () => {
     const q = encodeURIComponent(`${restName} ${rest.direction}`);
