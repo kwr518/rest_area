@@ -147,7 +147,7 @@ def get_rest_area_info():
         print(f"요청받은 휴게소 이름: {rest_name}") # 터미널 확인용
         
         # Gemini API 키 설정
-        api_key = "AIzaSyDYWO6ZHdeRkoNNj8xj-R2S6MQh9tXYnJs" 
+        api_key = "API키를_입력하세요" 
         
         # 모델명은 목록에 있었던 gemini-2.5-flash-lite는 구라침
         # flash 모델은 하루에 5번밖에 못함
