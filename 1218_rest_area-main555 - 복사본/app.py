@@ -147,14 +147,14 @@ def get_rest_area_info():
         print(f"요청받은 휴게소 이름: {rest_name}") # 터미널 확인용
         
         # Gemini API 키 설정
-        api_key = "API_키" 
+        api_key = "AIzaSyDYWO6ZHdeRkoNNj8xj-R2S6MQh9tXYnJs" 
         
         # 모델명은 목록에 있었던 gemini-2.5-flash-lite는 구라침
         # flash 모델은 하루에 5번밖에 못함
         
         url = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-lite:generateContent?key={api_key}"        
         payload = {
-            "contents": [{"parts": [{"text": f"{rest_name} 해당 휴게소를 찾아서 주소랑 실제로 판매중인 대표 메뉴 2개를 알려줘. 간단한 설명과 메뉴만 출력해. "}]}]
+            "contents": [{"parts": [{"text": f"{rest_name} 해당 휴게소를 찾아서 실제로 판매중인 대표 메뉴 2개만 알려줘. 출력할 때 마크다운 쓰지말고 메뉴 밑에 간단한 설명으로 가독성 좋게 출력해. 내가 달라고 한 정보 말고 쓸데없는 말 하지마. 출력할때 bold 처리하지마라. 진짜 하지마라. "}]}]
         }
         
         res = requests.post(url, json=payload, timeout=10)

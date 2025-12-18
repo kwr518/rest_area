@@ -161,3 +161,19 @@
 .rest-card-inner:hover {
     transform: translateY(-2px);
 }
+
+#rest-modal span, #rest-modal p, #rest-modal h2 {
+    color: inherit; /* 부모의 색상을 따르도록 설정 */
+    word-break: keep-all; /* 단어 단위 줄바꿈 방지 */
+}
+
+/* Lucide 아이콘 중앙 정렬 보정 */
+[data-lucide] {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+/* 모달이 뜰 때 레이아웃 깨짐 방지 */
+#rest-modal .grid, #rest-modal .flex {
+    width: 100%;
+}
