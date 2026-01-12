@@ -1,11 +1,11 @@
-# 🚗 고속도로 휴게소 큐레이션 서비스 (Highway Rest Area Curation)
+# 고속도로 휴게소 큐레이션 서비스 (Highway Rest Area Curation)
 
 > **"단순한 경로 안내를 넘어, 휴게소의 맛집과 편의시설 정보를 한눈에!"** > Kakao Maps API와 생성형 AI를 활용한 운전자 맞춤형 휴게소 정보 제공 서비스
 
 <br>
 
-## 📅 프로젝트 기간 & 개요
-- **진행 기간**: 202X.XX.XX ~ 202X.XX.XX (1주일)
+## 프로젝트 기간 & 개요
+- **진행 기간**: 2025.12.16 ~ 2025.16.23 (1주일)
 - **프로젝트 유형**: 팀 프로젝트 (5인)
 - **기획 배경**:
   - 자동차 여행 및 고속도로 이용객 증가
@@ -26,7 +26,7 @@
 
 <br>
 
-## 🌟 주요 기능 (Key Features)
+## 주요 기능 (Key Features)
 
 1. **실시간 경로 탐색 및 시각화**
    - 출발지/도착지 입력을 통한 최적 경로 산출
@@ -46,12 +46,12 @@
 
 <br>
 
-## 🏗️ 시스템 아키텍처 (System Architecture)
+## 시스템 아키텍처 (System Architecture)
 
 ![System Architecture]([<img width="637" height="457" alt="20260112_142010" src="https://github.com/user-attachments/assets/fbb974c4-dcd7-4110-a579-12fcd7026fd6" />])
 *사용자가 브라우저에 접속하면 Flask 서버가 Kakao API와 DB(MariaDB)를 조회하여, 경로와 휴게소 정보를 Jinja2 템플릿과 JS를 통해 렌더링합니다.*
 
-### 📂 디렉토리 구조 (Directory Structure)
+### 디렉토리 구조 (Directory Structure)
 ```bash
 1218_REST_AREA-MAIN
 ├── static/
@@ -63,7 +63,7 @@
 └── db.py             # MariaDB 연결 관리 및 데이터 쿼리 처리
 ```
 
-### 💾 ERD (Database Schema)
+### ERD (Database Schema)
 
 - **ROUTE**: 출발지, 도착지, 경로 데이터(Polyline) 저장
 - **REST_AREA**: 휴게소 이름, 주소, 좌표(위/경도), 노선 정보
@@ -71,7 +71,7 @@
 
 <br>
 
-### 👨‍👩‍👧‍👦 팀원 및 역할 (Team Members)
+### 팀원 및 역할 (Team Members)
 
 | 이름 | 역할 | 담당 업무 |
 | :--- | :--- | :--- |
@@ -83,7 +83,7 @@
 
 <img width="508" height="386" alt="20260112_142119" src="https://github.com/user-attachments/assets/1b261a2d-9d62-4dd8-8bb2-09445486fd6a" />
 
-🚀 트러블 슈팅 & 향후 계획 (Future Plans)
+트러블 슈팅 & 향후 계획 (Future Plans)
 AI 응답 속도 개선: 초기 로딩 지연 문제를 해결하기 위해 AI 응답 결과를 DB에 캐싱하는 구조 도입
 
 향후 계획:
