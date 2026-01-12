@@ -63,7 +63,24 @@
 └── db.py             # MariaDB 연결 관리 및 데이터 쿼리 처리
 ```
 
-💾 ERD (Database Schema)ROUTE: 출발지, 도착지, 경로 데이터(Polyline) 저장REST_AREA: 휴게소 이름, 주소, 좌표(위/경도), 노선 정보AI_INFO_CACHE: 휴게소별 AI 요약 정보 캐싱 (불필요한 API 호출 방지)👨‍👩‍👧‍👦 팀원 및 역할 (Team Members)이름역할담당 업무박민우PM일정 관리, 리소스 배분, 커뮤니케이션 총괄, 최종 발표신민서PL / Backend기술 아키텍처 설계, 핵심 백엔드 로직 개발 리드류건우AI / APIGemini AI 연동, 외부 API Key 관리 및 로직 최적화이유진UI/UX / FrontendUI 디자인, 프론트엔드 구현 및 사용자 경험 개선권민지DB / DeployMariaDB 스키마 설계, 데이터베이스 관리, 배포 환경 구축
+### 💾 ERD (Database Schema)
+
+- **ROUTE**: 출발지, 도착지, 경로 데이터(Polyline) 저장
+- **REST_AREA**: 휴게소 이름, 주소, 좌표(위/경도), 노선 정보
+- **AI_INFO_CACHE**: 휴게소별 AI 요약 정보 캐싱 (불필요한 API 호출 방지)
+
+<br>
+
+### 👨‍👩‍👧‍👦 팀원 및 역할 (Team Members)
+
+| 이름 | 역할 | 담당 업무 |
+| :--- | :--- | :--- |
+| **박민우** | **PM** | 일정 관리, 리소스 배분, 커뮤니케이션 총괄, 최종 발표 |
+| **신민서** | **PL / Backend** | 기술 아키텍처 설계, 핵심 백엔드 로직 개발 리드 |
+| **류건우** | **AI / API** | Gemini AI 연동, 외부 API Key 관리 및 로직 최적화 |
+| **이유진** | **UI/UX / Frontend** | UI 디자인, 프론트엔드 구현 및 사용자 경험 개선 |
+| **권민지** | **DB / Deploy** | MariaDB 스키마 설계, 데이터베이스 관리, 배포 환경 구축 |
+
 <img width="508" height="386" alt="20260112_142119" src="https://github.com/user-attachments/assets/1b261a2d-9d62-4dd8-8bb2-09445486fd6a" />
 
 🚀 트러블 슈팅 & 향후 계획 (Future Plans)
